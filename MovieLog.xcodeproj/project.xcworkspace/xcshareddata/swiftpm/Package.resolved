@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CoreFoundationKit",
+        "repositoryURL": "https://github.com/0vertex/CoreFoundationKit",
+        "state": {
+          "branch": null,
+          "revision": "722a820b2662ad9b6e2272ebe0756f104002d6da",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "CoreUIKit",
+        "repositoryURL": "https://github.com/0vertex/CoreUIKit",
+        "state": {
+          "branch": "main",
+          "revision": "62dd287ddc139a39bc3b48c45741866a55972970",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
