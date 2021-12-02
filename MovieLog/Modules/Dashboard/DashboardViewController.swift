@@ -11,9 +11,17 @@ import UIKit
 class DashboardViewController: UIViewController {
     
     // MARK: - Properties
+    // Featured movies list
+    private let horizontalListViewHeight: CGFloat = 150
+    private let horizontalListViewSpaceBetweenCells: CGFloat = 5
+    private var horizontalListViewCellWidth: CGFloat { self.view.bounds.width - (50 + self.horizontalListViewSpaceBetweenCells) }
     private lazy var horizontalListView = HorizontalListView(isPagingEnabled: true,
-                                                             spaceBetweenCells: 5,
-                                                             cellSize: CGSize(width: view.bounds.width - 50, height: 100))
+                                                             spaceBetweenCells: self.horizontalListViewSpaceBetweenCells,
+                                                             cellSize: CGSize(width: self.horizontalListViewCellWidth,
+                                                                              height: self.horizontalListViewHeight))
+    
+    // Upcoming movies
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +32,7 @@ class DashboardViewController: UIViewController {
             .top(with: self.view.safeAreaLayoutGuide.topAnchor)
             .leading(with: self.view.leadingAnchor)
             .trailing(with: self.view.trailingAnchor)
-            .with(height: 100)
+            .with(height: self.horizontalListViewHeight)
         self.horizontalListView.setupViews()
     }
     
