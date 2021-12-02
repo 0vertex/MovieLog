@@ -23,8 +23,7 @@ class BannerCell: BaseCollectionViewCell<BannerCellViewModel> {
         self.rootView
             .set(identifier: "BannerCell.rootView")
             .add(to: self.contentView)
-            .allAnchorsSame(on: self.contentView,
-                            margin: UIEdgeInsets(topBottom: 0, leftRight: 2.5))
+            .allAnchorsSame(on: self.contentView)
     }
     
 }

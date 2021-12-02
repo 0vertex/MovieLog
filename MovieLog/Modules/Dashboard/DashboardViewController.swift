@@ -12,7 +12,8 @@ class DashboardViewController: UIViewController {
     
     // MARK: - Properties
     private lazy var horizontalListView = HorizontalListView(isPagingEnabled: true,
-                                                             cellSize: CGSize(width: view.bounds.width - 10, height: 200))
+                                                             spaceBetweenCells: 5,
+                                                             cellSize: CGSize(width: view.bounds.width - 50, height: 100))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class DashboardViewController: UIViewController {
             .top(with: self.view.safeAreaLayoutGuide.topAnchor)
             .leading(with: self.view.leadingAnchor)
             .trailing(with: self.view.trailingAnchor)
-            .with(height: 200)
+            .with(height: 100)
         self.horizontalListView.setupViews()
     }
     

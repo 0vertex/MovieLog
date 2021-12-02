@@ -28,10 +28,14 @@ class HorizontalListView: UIView, BaseView {
     private lazy var collectionView = BaseCollectionView(layout: self.flowLayout)
     
     private let isPagingEnabled: Bool
+    private let spaceBetweenCells: CGFloat
     private let cellSize: CGSize
     
-    init(isPagingEnabled: Bool = false, cellSize: CGSize) {
+    init(isPagingEnabled: Bool = false,
+         spaceBetweenCells: CGFloat = 10,
+         cellSize: CGSize) {
         self.isPagingEnabled = isPagingEnabled
+        self.spaceBetweenCells = spaceBetweenCells
         self.cellSize = cellSize
 
         super.init(frame: .zero)
@@ -45,13 +49,13 @@ class HorizontalListView: UIView, BaseView {
     func setupViews() {
         self.flowLayout.scrollDirection = .horizontal
         self.flowLayout.minimumInteritemSpacing = .zero
-        self.flowLayout.minimumLineSpacing = .zero
+        self.flowLayout.minimumLineSpacing = self.spaceBetweenCells
         self.flowLayout.itemSize = self.cellSize
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.collectionView.isPagingEnabled = self.isPagingEnabled
         self.collectionView.backgroundColor = .clear
+        self.collectionView.showsHorizontalScrollIndicator = false
         
         self.collectionView
             .set(identifier: "HorizontalListView.collectionView")
@@ -80,6 +84,20 @@ extension HorizontalListView: UICollectionViewDelegate, UICollectionViewDataSour
         cell.setupViews()
 
         return cell
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if self.isPagingEnabled == false { return }
+        // Page effect
+        if scrollView == self.collectionView {
+            var currentOffset = self.collectionView.contentOffset
+            currentOffset.x += self.collectionView.frame.size.width / 2
+            
+            if let indexPath = self.collectionView.indexPathForItem(at: currentOffset) {
+                self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            }
+            
+        }
     }
     
 }
