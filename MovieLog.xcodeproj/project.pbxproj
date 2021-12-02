@@ -19,6 +19,8 @@
 		131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05592757C740009EE18C /* DashboardViewController.swift */; };
 		131A05642757CD42009EE18C /* HorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05632757CD42009EE18C /* HorizontalListView.swift */; };
 		131A05662757DAE6009EE18C /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05652757DAE6009EE18C /* BannerCell.swift */; };
+		138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */; };
+		138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09932758747600604BB4 /* UIView+Constrints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		131A05592757C740009EE18C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		131A05632757CD42009EE18C /* HorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListView.swift; sourceTree = "<group>"; };
 		131A05652757DAE6009EE18C /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListTableViewCell.swift; sourceTree = "<group>"; };
+		138E09932758747600604BB4 /* UIView+Constrints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +164,7 @@
 		131A05582757C406009EE18C /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				131A05592757C740009EE18C /* DashboardViewController.swift */,
+				138E098E2758704400604BB4 /* Views */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -168,6 +172,7 @@
 		131A05612757CA32009EE18C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				138E09922758745B00604BB4 /* Extensions */,
 				131A05622757CD26009EE18C /* Views */,
 			);
 			path = Common;
@@ -177,9 +182,34 @@
 			isa = PBXGroup;
 			children = (
 				131A05632757CD42009EE18C /* HorizontalListView.swift */,
-				131A05652757DAE6009EE18C /* BannerCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		138E098E2758704400604BB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				138E098F2758705500604BB4 /* Cells */,
+				131A05592757C740009EE18C /* DashboardViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		138E098F2758705500604BB4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				131A05652757DAE6009EE18C /* BannerCell.swift */,
+				138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		138E09922758745B00604BB4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				138E09932758747600604BB4 /* UIView+Constrints.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,8 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				131A05642757CD42009EE18C /* HorizontalListView.swift in Sources */,
+				138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */,
 				131A05662757DAE6009EE18C /* BannerCell.swift in Sources */,
 				130094332755181D0091ADD2 /* RootViewController.swift in Sources */,
+				138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */,
 				131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */,
 				1300942F2755181D0091ADD2 /* AppDelegate.swift in Sources */,
 			);

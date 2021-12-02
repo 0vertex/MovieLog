@@ -29,13 +29,17 @@ class HorizontalListView: UIView, BaseView {
     
     private let isPagingEnabled: Bool
     private let spaceBetweenCells: CGFloat
+    /// Space before first cell and space after last cell
+    private let firstAndLastCellInset: CGFloat
     private let cellSize: CGSize
     
     init(isPagingEnabled: Bool = false,
-         spaceBetweenCells: CGFloat = 10,
+         spaceBetweenCells: CGFloat = 5,
+         firstAndLastCellOffset: CGFloat = 5,
          cellSize: CGSize) {
         self.isPagingEnabled = isPagingEnabled
         self.spaceBetweenCells = spaceBetweenCells
+        self.firstAndLastCellInset = firstAndLastCellOffset
         self.cellSize = cellSize
 
         super.init(frame: .zero)
@@ -56,6 +60,7 @@ class HorizontalListView: UIView, BaseView {
         self.collectionView.dataSource = self
         self.collectionView.backgroundColor = .clear
         self.collectionView.showsHorizontalScrollIndicator = false
+        self.collectionView.contentInset = UIEdgeInsets(leftRight: self.firstAndLastCellInset)
         
         self.collectionView
             .set(identifier: "HorizontalListView.collectionView")
