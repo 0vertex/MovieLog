@@ -14,6 +14,7 @@
 		130094462755181E0091ADD2 /* MovieLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130094452755181E0091ADD2 /* MovieLogTests.swift */; };
 		130094502755181E0091ADD2 /* MovieLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300944F2755181E0091ADD2 /* MovieLogUITests.swift */; };
 		130094522755181E0091ADD2 /* MovieLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130094512755181E0091ADD2 /* MovieLogUITestsLaunchTests.swift */; };
+		13059CA62759B1F100E0AB0A /* CollectionViewBannerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13059CA52759B1F100E0AB0A /* CollectionViewBannerLayout.swift */; };
 		131A05532757C397009EE18C /* CoreUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 131A05522757C397009EE18C /* CoreUIKit */; };
 		131A05562757C3DD009EE18C /* CoreFoundationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 131A05552757C3DD009EE18C /* CoreFoundationKit */; };
 		131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05592757C740009EE18C /* DashboardViewController.swift */; };
@@ -52,6 +53,7 @@
 		1300944B2755181E0091ADD2 /* MovieLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1300944F2755181E0091ADD2 /* MovieLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITests.swift; sourceTree = "<group>"; };
 		130094512755181E0091ADD2 /* MovieLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		13059CA52759B1F100E0AB0A /* CollectionViewBannerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewBannerLayout.swift; sourceTree = "<group>"; };
 		131A05592757C740009EE18C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		131A05632757CD42009EE18C /* HorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListView.swift; sourceTree = "<group>"; };
 		131A05652757DAE6009EE18C /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 			path = MovieLogUITests;
 			sourceTree = "<group>";
 		};
+		13059CA42759B19500E0AB0A /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				13059CA52759B1F100E0AB0A /* CollectionViewBannerLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		131A054F2757BFBC009EE18C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				138E09922758745B00604BB4 /* Extensions */,
+				13059CA42759B19500E0AB0A /* Layouts */,
 				131A05622757CD26009EE18C /* Views */,
 			);
 			path = Common;
@@ -354,6 +365,7 @@
 				138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */,
 				131A05662757DAE6009EE18C /* BannerCell.swift in Sources */,
 				130094332755181D0091ADD2 /* RootViewController.swift in Sources */,
+				13059CA62759B1F100E0AB0A /* CollectionViewBannerLayout.swift in Sources */,
 				138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */,
 				131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */,
 				1300942F2755181D0091ADD2 /* AppDelegate.swift in Sources */,

@@ -16,11 +16,7 @@ struct HorizontalListTableViewCellViewModel: BaseViewModel {
 }
 
 class HorizontalListTableViewCell: BaseTableViewCell<HorizontalListTableViewCellViewModel> {
-    private let defaultSize: CGFloat = 50
-    private lazy var horizontalListView = HorizontalListView(isPagingEnabled: self.viewModel?.isPagingEnabled ?? false,
-                                                             spaceBetweenCells: self.viewModel?.spaceBetweenCells ?? self.defaultSize,
-                                                             cellSize: CGSize(width: self.viewModel?.cellWidth ?? self.defaultSize,
-                                                                              height: self.viewModel?.listHeight ?? self.defaultSize))
+    private lazy var horizontalListView = HorizontalListView()
     
     override func setupViews() {
         super.setupViews()
@@ -34,7 +30,7 @@ class HorizontalListTableViewCell: BaseTableViewCell<HorizontalListTableViewCell
             .set(identifier: "HorizontalListView")
             .add(to: self.contentView)
             .allAnchorsSame(on: self.contentView)
-            .with(height: self.viewModel?.listHeight ?? self.defaultSize)
+            .with(height: self.viewModel?.listHeight ?? 100)
 
         self.horizontalListView.setupViews()
         self.horizontalListView.didTapListItem = { [weak self] item in

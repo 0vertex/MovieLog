@@ -20,6 +20,9 @@ class BannerCell: BaseCollectionViewCell<BannerCellViewModel> {
         super.setupViews()
         self.rootView.backgroundColor = .red
         
+        self.rootView.layer.cornerRadius = 8
+        self.rootView.layer.masksToBounds = true
+        
         self.rootView
             .set(identifier: "BannerCell.rootView")
             .add(to: self.contentView)
