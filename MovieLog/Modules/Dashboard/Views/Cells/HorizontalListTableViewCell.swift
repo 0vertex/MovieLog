@@ -9,7 +9,7 @@ import CoreUIKit
 import UIKit
 
 struct HorizontalListTableViewCellViewModel: BaseViewModel {
-    let listHeight: CGFloat = 150
+    let listHeight: CGFloat
     let layout: UICollectionViewLayout
 }
 
