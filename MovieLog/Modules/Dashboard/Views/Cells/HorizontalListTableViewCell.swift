@@ -9,14 +9,12 @@ import CoreUIKit
 import UIKit
 
 struct HorizontalListTableViewCellViewModel: BaseViewModel {
-    let isPagingEnabled = true
     let listHeight: CGFloat = 150
-    let spaceBetweenCells: CGFloat = 5
-    let cellWidth: CGFloat = 300
+    let layout: UICollectionViewLayout
 }
 
 class HorizontalListTableViewCell: BaseTableViewCell<HorizontalListTableViewCellViewModel> {
-    private lazy var horizontalListView = HorizontalListView()
+    private var horizontalListView: CustomCollectionView?
     
     override func setupViews() {
         super.setupViews()
@@ -26,14 +24,18 @@ class HorizontalListTableViewCell: BaseTableViewCell<HorizontalListTableViewCell
             self.backgroundConfiguration = .clear()
         }
         
-        self.horizontalListView
+        if self.horizontalListView == nil {
+            self.horizontalListView = CustomCollectionView(layout: self.viewModel?.layout)
+        }
+        
+        self.horizontalListView?
             .set(identifier: "HorizontalListView")
             .add(to: self.contentView)
             .allAnchorsSame(on: self.contentView)
             .with(height: self.viewModel?.listHeight ?? 100)
 
-        self.horizontalListView.setupViews()
-        self.horizontalListView.didTapListItem = { [weak self] item in
+        self.horizontalListView?.setupViews()
+        self.horizontalListView?.didTapListItem = { [weak self] item in
             print(item)
         }
     }

@@ -18,7 +18,7 @@
 		131A05532757C397009EE18C /* CoreUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 131A05522757C397009EE18C /* CoreUIKit */; };
 		131A05562757C3DD009EE18C /* CoreFoundationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 131A05552757C3DD009EE18C /* CoreFoundationKit */; };
 		131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05592757C740009EE18C /* DashboardViewController.swift */; };
-		131A05642757CD42009EE18C /* HorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05632757CD42009EE18C /* HorizontalListView.swift */; };
+		131A05642757CD42009EE18C /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05632757CD42009EE18C /* CustomCollectionView.swift */; };
 		131A05662757DAE6009EE18C /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05652757DAE6009EE18C /* BannerCell.swift */; };
 		138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */; };
 		138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09932758747600604BB4 /* UIView+Constrints.swift */; };
@@ -55,7 +55,7 @@
 		130094512755181E0091ADD2 /* MovieLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		13059CA52759B1F100E0AB0A /* CollectionViewBannerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewBannerLayout.swift; sourceTree = "<group>"; };
 		131A05592757C740009EE18C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		131A05632757CD42009EE18C /* HorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListView.swift; sourceTree = "<group>"; };
+		131A05632757CD42009EE18C /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
 		131A05652757DAE6009EE18C /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListTableViewCell.swift; sourceTree = "<group>"; };
 		138E09932758747600604BB4 /* UIView+Constrints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrints.swift"; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		131A05622757CD26009EE18C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				131A05632757CD42009EE18C /* HorizontalListView.swift */,
+				131A05632757CD42009EE18C /* CustomCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,7 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				131A05642757CD42009EE18C /* HorizontalListView.swift in Sources */,
+				131A05642757CD42009EE18C /* CustomCollectionView.swift in Sources */,
 				138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */,
 				131A05662757DAE6009EE18C /* BannerCell.swift in Sources */,
 				130094332755181D0091ADD2 /* RootViewController.swift in Sources */,

@@ -8,24 +8,34 @@
 import CoreUIKit
 import UIKit
 
-struct HorizontalListViewModel: BaseViewModel {
+struct CustomCollectionViewModel: BaseViewModel {
     
 }
 
-class HorizontalListView: UIView, BaseView {
+class CustomCollectionView: UIView, BaseView {
     // MARK: - Properties
-    var viewModel: HorizontalListViewModel? {
+    var viewModel: CustomCollectionViewModel? {
         didSet {
             self.setupData()
         }
     }
     
     /// Invoked when any item from the `collectionView` is selected
-    var didTapListItem: ((HorizontalListViewModel) -> Void)?
+    var didTapListItem: ((CustomCollectionViewModel) -> Void)?
     
     // MARK: - Views
-    private let flowLayout = CollectionViewBannerLayout()
-    private lazy var collectionView = BaseCollectionView(layout: self.flowLayout)
+    private let collectionViewLayout: UICollectionViewLayout
+    private let collectionView: BaseCollectionView
+
+    init(layout: UICollectionViewLayout?) {
+        self.collectionViewLayout = layout ?? UICollectionViewFlowLayout()
+        self.collectionView = BaseCollectionView(layout: self.collectionViewLayout)
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Setups
     func setupViews() {
@@ -46,7 +56,7 @@ class HorizontalListView: UIView, BaseView {
     
 }
 
-extension HorizontalListView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CustomCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -59,19 +69,6 @@ extension HorizontalListView: UICollectionViewDelegate, UICollectionViewDataSour
         cell.setupViews()
 
         return cell
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        // Page effect
-        if scrollView == self.collectionView {
-            var currentOffset = self.collectionView.contentOffset
-            currentOffset.x += self.collectionView.frame.size.width / 2
-            
-            if let indexPath = self.collectionView.indexPathForItem(at: currentOffset) {
-                self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            }
-            
-        }
     }
     
 }
