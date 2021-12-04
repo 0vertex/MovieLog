@@ -8,9 +8,10 @@
 import CoreUIKit
 import UIKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, BaseView {
     
     // MARK: - Properties
+    var viewModel: DashboardViewControllerViewModel?
     private let dashboardVerticalList = BaseTableView()
     // Featured movies list
     // Upcoming movies
@@ -18,25 +19,36 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupData()
+        self.setupViews()
+    }
+    
+    func setupViews() {
         self.dashboardVerticalList
             .set(identifier: "dashboardVerticalList")
             .add(to: self.view)
             .allSafeEdgeAnchorsSame(on: self.view, margin: UIEdgeInsets(topBottom: 5))
-
+        
         self.dashboardVerticalList.backgroundColor = .clear
         self.dashboardVerticalList.delegate = self
         self.dashboardVerticalList.dataSource = self
         self.dashboardVerticalList.register(HorizontalListTableViewCell.self)
     }
     
+    func setupData() {
+        
+    }
+    
 }
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
             if let cell = self.dashboardVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {

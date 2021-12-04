@@ -13,7 +13,7 @@ class RootViewController: UINavigationController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .lightGray
-        self.pushViewController(DashboardViewController(), animated: false)
+        self.pushViewController(MovieDetailsViewController(), animated: false)
     }
 
 }
