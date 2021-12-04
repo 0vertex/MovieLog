@@ -17,9 +17,9 @@ class CollectionViewBannerLayout: BaseCollectionViewFlowLayout {
         self.setupCollectionViewConfigs()
         
         // Setup cell
-        let availableWidth = collectionView.bounds.inset(by: collectionView.layoutMargins).width
-        let availableHeight = collectionView.bounds.inset(by: collectionView.layoutMargins).height
-        let cellWidth = availableWidth - (self.horizontalMargin * 2)
+        let availableWidth = collectionView.bounds.width
+        let availableHeight = collectionView.bounds.height
+        let cellWidth = availableWidth - 50
         
         self.itemSize = CGSize(width: cellWidth, height: availableHeight)
     }

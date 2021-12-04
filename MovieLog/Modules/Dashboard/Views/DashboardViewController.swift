@@ -65,7 +65,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             if let cell = self.dashboardVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
                 cell.viewModel = HorizontalListTableViewCellViewModel(listHeight: 250,
-                                                                      layout: CollectionViewColumnLayout(cellSizeType: .init(width: .full, height: .half)))
+                                                                      layout: CollectionViewColumnLayout(cellSizeType: .init(width: .threeFourths, height: .half)))
                 cell.setupViews()
                 
                 return cell

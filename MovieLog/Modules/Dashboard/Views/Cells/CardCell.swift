@@ -26,7 +26,7 @@ class CardCell: BaseCollectionViewCell<CardCellViewModel> {
         self.rootView
             .set(identifier: "BannerCell.rootView")
             .add(to: self.contentView)
-            .allAnchorsSame(on: self.contentView)
+            .allAnchorsSame(on: self.contentView, margin: UIEdgeInsets(topBottom: 5, leftRight: 5))
     }
     
 }

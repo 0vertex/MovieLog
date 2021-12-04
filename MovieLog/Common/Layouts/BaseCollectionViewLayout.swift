@@ -10,11 +10,10 @@ import UIKit
 class BaseCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     // MARK: - Properties
+    // space before first and after last cell
     let horizontalMargin: CGFloat
-    let spaceBetweenCells: CGFloat
     
-    init(spaceBetweenCells: CGFloat = 8, horizontalMargin: CGFloat = 15) {
-        self.spaceBetweenCells = spaceBetweenCells
+    init(horizontalMargin: CGFloat = 5) {
         self.horizontalMargin = horizontalMargin
         super.init()
         
@@ -33,11 +32,11 @@ extension BaseCollectionViewFlowLayout {
     func setupLayoutConfigs() {
         self.scrollDirection = .horizontal
         self.minimumInteritemSpacing = .zero
-        self.minimumLineSpacing = self.spaceBetweenCells
+        self.minimumLineSpacing = .zero
     }
     
     func setupCollectionViewConfigs() {
-        self.collectionView?.contentInset = UIEdgeInsets(leftRight: 8)
+        self.collectionView?.contentInset = UIEdgeInsets(leftRight: self.horizontalMargin)
         self.collectionView?.backgroundColor = .clear
         self.collectionView?.showsHorizontalScrollIndicator = false
     }

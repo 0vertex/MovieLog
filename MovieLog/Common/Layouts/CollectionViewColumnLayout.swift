@@ -9,8 +9,9 @@ import UIKit
 
 enum SizeType {
     case full
-    case threeFourths
+    case threeFourths // (3/4)
     case half
+    case oneThird // (1/3)
     case custom(size: CGFloat)
 }
 
@@ -23,12 +24,11 @@ class CollectionViewColumnLayout: BaseCollectionViewFlowLayout {
     
     private let cellSizeType: ViewSize
     
-    init(spaceBetweenCells: CGFloat = 8,
-         horizontalMargin: CGFloat = 16,
-         cellSizeType: ViewSize = ViewSize(width: .threeFourths, height: .custom(size: 60))) {
+    init(horizontalMargin: CGFloat = 5,
+         cellSizeType: ViewSize = ViewSize(width: .threeFourths, height: .oneThird)) {
 
         self.cellSizeType = cellSizeType
-        super.init(spaceBetweenCells: spaceBetweenCells, horizontalMargin: horizontalMargin)
+        super.init(horizontalMargin: horizontalMargin)
     }
     
     required init?(coder: NSCoder) {
@@ -43,11 +43,11 @@ class CollectionViewColumnLayout: BaseCollectionViewFlowLayout {
         
         // Setup cell
         let calculatedCellWidth = self.calculateSizeParamValue(using: self.cellSizeType.width,
-                                                               cellSizeParamValue: collectionView.bounds.inset(by: collectionView.layoutMargins).width)
+                                                               cellSizeParamValue: collectionView.bounds.width)
         let cellWidth = calculatedCellWidth - (self.horizontalMargin * 2)
 
         let calculatedCellHeight = self.calculateSizeParamValue(using: self.cellSizeType.height,
-                                                                cellSizeParamValue: collectionView.bounds.inset(by: collectionView.layoutMargins).height)
+                                                                cellSizeParamValue: collectionView.bounds.height)
 
         self.itemSize = CGSize(width: cellWidth, height: calculatedCellHeight)
     }
@@ -64,7 +64,9 @@ extension CollectionViewColumnLayout {
             let quarterOfCellSizeParamValue = cellSizeParamValue / 4
             return quarterOfCellSizeParamValue * 3
         case .half:
-            return cellSizeParamValue / 2
+            return (cellSizeParamValue / 2)
+        case .oneThird:
+            return (cellSizeParamValue / 3)
         case .custom(let size):
             return size
         }
