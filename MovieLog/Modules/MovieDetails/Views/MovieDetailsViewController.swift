@@ -24,7 +24,7 @@ class MovieDetailsViewController: UIViewController {
         self.movieDetailsVerticalList
             .set(identifier: "movieDetailsVerticalList")
             .add(to: self.view)
-            .allAnchorsSame(on: self.view)
+            .allAnchorsSame(on: self.view, margin: UIEdgeInsets(top: -20))
 
         self.movieDetailsVerticalList.showsVerticalScrollIndicator = false
         self.movieDetailsVerticalList.backgroundColor = .clear
@@ -56,6 +56,16 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == .zero {
+            if let movieOverviewCell = self.movieDetailsVerticalList.dequeue(MovieOverviewCell.self, for: indexPath) {
+                movieOverviewCell.viewModel = MovieOverviewCellViewModel(title: "Overview",
+                                                                         description: "Earth is visited by an alien species that threatens humanity’s existence. Events unfold in real time through the eyes of five ordinary people across the globe as they struggle to make sense of the chaos unraveling around them.",
+                                                                         creators: ["Simon Kinberg", "David Weil"])
+                movieOverviewCell.setupViews()
+                return movieOverviewCell
+            }
+        }
+        
         return UITableViewCell()
     }
     
