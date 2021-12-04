@@ -33,17 +33,48 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = self.dashboardVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
-            cell.viewModel = HorizontalListTableViewCellViewModel(listHeight: 150,
-                                                                  layout: CollectionViewBannerLayout())
-            cell.setupViews()
-
-            return cell
+        switch indexPath.row {
+        case 0:
+            if let cell = self.dashboardVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
+                cell.viewModel = HorizontalListTableViewCellViewModel(listHeight: 150,
+                                                                      layout: CollectionViewBannerLayout())
+                cell.setupViews()
+                
+                return cell
+            }
+        case 1:
+            if let cell = self.dashboardVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
+                cell.viewModel = HorizontalListTableViewCellViewModel(listHeight: 200,
+                                                                      layout: CollectionViewColumnLayout())
+                cell.setupViews()
+                
+                return cell
+            }
+        case 2:
+            if let cell = self.dashboardVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
+                cell.viewModel = HorizontalListTableViewCellViewModel(listHeight: 200,
+                                                                      layout: CollectionViewColumnLayout(cellSizeType: .init(width: .threeFourths, height: .full)))
+                cell.setupViews()
+                
+                return cell
+            }
+        case 3:
+            if let cell = self.dashboardVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
+                cell.viewModel = HorizontalListTableViewCellViewModel(listHeight: 250,
+                                                                      layout: CollectionViewColumnLayout(cellSizeType: .init(width: .full, height: .half)))
+                cell.setupViews()
+                
+                return cell
+            }
+        default:
+            assertionFailure()
+            return UITableViewCell()
         }
+        
         
         assertionFailure()
         return UITableViewCell()

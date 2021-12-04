@@ -47,7 +47,7 @@ class CustomCollectionView: UIView, BaseView {
             .add(to: self)
             .allAnchorsSame(on: self)
         
-        self.collectionView.register(BannerCell.self)
+        self.collectionView.register(CardCell.self)
     }
     
     func setupData() {
@@ -65,7 +65,7 @@ extension CustomCollectionView: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeue(BannerCell.self, for: indexPath)!
+        let cell = self.collectionView.dequeue(CardCell.self, for: indexPath)!
         cell.setupViews()
 
         return cell

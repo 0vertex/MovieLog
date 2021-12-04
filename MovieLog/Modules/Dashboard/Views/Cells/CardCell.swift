@@ -1,5 +1,5 @@
 //
-//  BannerCell.swift
+//  CardCell.swift
 //  MovieLog
 //
 //  Created by Manish on 01/12/21.
@@ -8,11 +8,11 @@
 import CoreUIKit
 import UIKit
 
-class BannerCellViewModel: BaseViewModel {
+class CardCellViewModel: BaseViewModel {
     
 }
 
-class BannerCell: BaseCollectionViewCell<BannerCellViewModel> {
+class CardCell: BaseCollectionViewCell<CardCellViewModel> {
     
     private let rootView = UIView()
     
