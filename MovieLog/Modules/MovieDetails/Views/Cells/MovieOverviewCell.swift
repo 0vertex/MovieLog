@@ -16,18 +16,14 @@ struct MovieOverviewCellViewModel: BaseViewModel {
 
 class MovieOverviewCell: BaseTableViewCell<MovieOverviewCellViewModel> {
     
-    private let titleLabel = UILabel()
-    private let descritionLabel = UILabel()
-    private let creatorsTitleLabel = UILabel()
-    private let creatorsLabel = UILabel()
+    private let titleLabel = UILabel.bold(with: 25)
+    private let descritionLabel = UILabel.regular(with: 16)
+    private let creatorsTitleLabel = UILabel.bold(with: 18)
+    private let creatorsLabel = UILabel.medium(with: 16)
     private lazy var rootStackView = UIStackView.create(with: [self.titleLabel, self.descritionLabel, self.creatorsTitleLabel, self.creatorsLabel])
     
     override func setupViews() {
         super.setupViews()
-        
-        self.descritionLabel.numberOfLines = .zero
-        self.creatorsLabel.numberOfLines = .zero
-        
         self.rootStackView
             .set(identifier: "MovieOverviewCell.rootStackView")
             .add(to: self.contentView)
