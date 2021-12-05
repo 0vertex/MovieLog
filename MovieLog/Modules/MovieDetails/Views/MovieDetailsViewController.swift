@@ -9,10 +9,11 @@ import CoreUIKit
 import UIKit
 
 class MovieDetailsViewController: UIViewController {
-    
+    // MARK: - Properties
     var viewModel: DashboardViewControllerViewModel?
     private let movieDetailsVerticalList = BaseTableView()
     
+    // MARK: - VC Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +21,7 @@ class MovieDetailsViewController: UIViewController {
         self.setupViews()
     }
     
+    // MARK: - Setups
     func setupViews() {
         self.movieDetailsVerticalList
             .set(identifier: "movieDetailsVerticalList")

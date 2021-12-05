@@ -30,6 +30,8 @@
 		1353AECA275BA2DB004D89E1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 1353AEC9275BA2DB004D89E1 /* Nuke */; };
 		138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */; };
 		138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09932758747600604BB4 /* UIView+Constrints.swift */; };
+		1395EAF8275C61BF00E3A6B2 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1395EAF7275C61BF00E3A6B2 /* StringConstants.swift */; };
+		1395EAFA275C61C900E3A6B2 /* SizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1395EAF9275C61C900E3A6B2 /* SizeConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		1353AEC6275B9E2C004D89E1 /* UIStackView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Init.swift"; sourceTree = "<group>"; };
 		138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListTableViewCell.swift; sourceTree = "<group>"; };
 		138E09932758747600604BB4 /* UIView+Constrints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrints.swift"; sourceTree = "<group>"; };
+		1395EAF7275C61BF00E3A6B2 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		1395EAF9275C61C900E3A6B2 /* SizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		131A05612757CA32009EE18C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1395EAF6275C61A900E3A6B2 /* Constants */,
 				138E09922758745B00604BB4 /* Extensions */,
 				13059CA42759B19500E0AB0A /* Layouts */,
 				131A05622757CD26009EE18C /* Views */,
@@ -268,6 +273,15 @@
 				1353AEC6275B9E2C004D89E1 /* UIStackView+Init.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1395EAF6275C61A900E3A6B2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1395EAF7275C61BF00E3A6B2 /* StringConstants.swift */,
+				1395EAF9275C61C900E3A6B2 /* SizeConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,11 +428,13 @@
 				138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */,
 				1353AEBA275B2058004D89E1 /* CollectionViewColumnLayout.swift in Sources */,
 				1353AEC7275B9E2C004D89E1 /* UIStackView+Init.swift in Sources */,
+				1395EAF8275C61BF00E3A6B2 /* StringConstants.swift in Sources */,
 				131A05662757DAE6009EE18C /* CardCell.swift in Sources */,
 				130094332755181D0091ADD2 /* RootViewController.swift in Sources */,
 				1353AEBE275B3AA6004D89E1 /* MovieDetailsViewController.swift in Sources */,
 				1353AEC5275B585D004D89E1 /* DashboardViewControllerViewModel.swift in Sources */,
 				13059CA62759B1F100E0AB0A /* CollectionViewBannerLayout.swift in Sources */,
+				1395EAFA275C61C900E3A6B2 /* SizeConstants.swift in Sources */,
 				138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */,
 				131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */,
 				1353AEC3275B56F9004D89E1 /* MovieDetailsHeaderView.swift in Sources */,
