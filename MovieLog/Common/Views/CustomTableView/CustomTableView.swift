@@ -28,12 +28,20 @@ class CustomTableView: UIView, BaseView {
             .add(to: self)
             .allAnchorsSame(on: self)
         
+        self.viewModel?.sectionData.forEach { section in
+            // Register headers
+            if let safeHeaderType = section.type.viewType {
+                self.tableView.registerHeaderFooter(safeHeaderType)
+            }
+            
+            // Register cells
+            section.cellData.forEach { cell in
+                self.tableView.register(cell.cellType)
+            }
+        }
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        self.viewModel?.cellData.forEach {
-            self.tableView.register($0.cellType)
-        }
     }
     
     func setupData() {
@@ -43,15 +51,38 @@ class CustomTableView: UIView, BaseView {
 }
 
 extension CustomTableView: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return safe(self.viewModel?.sectionData.count)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerViewType = self.viewModel?.sectionData[section].type else { return nil }
+        
+        switch headerViewType {
+        case .none:
+            return nil
+        case .titleSubTitle(let data):
+            if let titleSubtitleView = self.tableView.dequeueHeaderFooter(for: TitleSubTitleHeaderFooterView.self) {
+                titleSubtitleView.viewModel = data
+            } else {
+                assertionFailure()
+            }
+        }
+        
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return safe(self.viewModel?.cellData.count)
+        return safe(self.viewModel?.sectionData[section].cellData.count)
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cellData = self.viewModel?.cellData[indexPath.row] else {
+        guard let cellData = self.viewModel?.sectionData[indexPath.section].cellData[indexPath.row] else {
             assertionFailure()
             return UITableViewCell()
         }

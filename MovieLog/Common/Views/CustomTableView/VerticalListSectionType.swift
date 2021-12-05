@@ -6,8 +6,18 @@
 //
 
 import Foundation
+import UIKit
 
 enum VerticalListSectionType {
-    case banner
-    case title
+    case none
+    case titleSubTitle(data: TitleSubTitleHeaderFooterViewModel)
+    
+    var viewType: UITableViewHeaderFooterView.Type? {
+        switch self {
+        case .none:
+            return nil
+        case .titleSubTitle(_):
+            return TitleSubTitleHeaderFooterView.self
+        }
+    }
 }

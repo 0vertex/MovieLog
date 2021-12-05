@@ -7,9 +7,11 @@
 
 import CoreUIKit
 
-struct CustomTableViewModel: BaseViewModel, CustomTableViewSectionViewModel {
-    var type: VerticalListSectionType?
-    var sectionData: SectionDataModel?
-
+struct CustomTableSectionDataModel: SectionDataModel {
+    var type: VerticalListSectionType
     var cellData: [VerticalListCellType]
+}
+
+struct CustomTableViewModel: BaseViewModel, CustomTableViewSectionViewModel {
+    var sectionData: [CustomTableSectionDataModel]
 }

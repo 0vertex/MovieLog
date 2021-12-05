@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol SectionDataModel { }
+protocol SectionDataModel {
+    var type: VerticalListSectionType { get set }
+    var cellData: [VerticalListCellType] { get set }
+}
 
 protocol CustomTableViewSectionViewModel {
-    var type: VerticalListSectionType? { get set }
-
-    var sectionData: SectionDataModel? { get set }
-    
-    var cellData: [VerticalListCellType] { get set }
+    associatedtype SectionViewModel: SectionDataModel
+    var sectionData: [SectionViewModel] { get set }
 }
