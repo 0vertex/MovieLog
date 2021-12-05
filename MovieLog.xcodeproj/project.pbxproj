@@ -52,6 +52,12 @@
 		1395EB26275C7D2300E3A6B2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1395EB19275C7D2300E3A6B2 /* Roboto-Regular.ttf */; };
 		1395EB27275C7D2300E3A6B2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1395EB1A275C7D2300E3A6B2 /* LICENSE.txt */; };
 		1395EB29275C7EF100E3A6B2 /* UILabel+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1395EB28275C7EF100E3A6B2 /* UILabel+Init.swift */; };
+		13E316C0275CAD4B00A539D8 /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316BF275CAD4B00A539D8 /* MovieListModel.swift */; };
+		13E316C2275CB19900A539D8 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316C1275CB19900A539D8 /* CustomTableView.swift */; };
+		13E316C5275CCE0100A539D8 /* CustomTableViewSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316C4275CCE0100A539D8 /* CustomTableViewSectionViewModel.swift */; };
+		13E316C9275CCE4100A539D8 /* VerticalListCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316C8275CCE4100A539D8 /* VerticalListCellType.swift */; };
+		13E316CB275CCE5400A539D8 /* VerticalListSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316CA275CCE5400A539D8 /* VerticalListSectionType.swift */; };
+		13E316CF275CD20200A539D8 /* CustomTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316CE275CD20200A539D8 /* CustomTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +124,12 @@
 		1395EB19275C7D2300E3A6B2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		1395EB1A275C7D2300E3A6B2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		1395EB28275C7EF100E3A6B2 /* UILabel+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Init.swift"; sourceTree = "<group>"; };
+		13E316BF275CAD4B00A539D8 /* MovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
+		13E316C1275CB19900A539D8 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		13E316C4275CCE0100A539D8 /* CustomTableViewSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewSectionViewModel.swift; sourceTree = "<group>"; };
+		13E316C8275CCE4100A539D8 /* VerticalListCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListCellType.swift; sourceTree = "<group>"; };
+		13E316CA275CCE5400A539D8 /* VerticalListSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListSectionType.swift; sourceTree = "<group>"; };
+		13E316CE275CD20200A539D8 /* CustomTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +255,7 @@
 			children = (
 				138E098E2758704400604BB4 /* Views */,
 				1353AEC4275B585D004D89E1 /* DashboardViewControllerViewModel.swift */,
+				13E316BF275CAD4B00A539D8 /* MovieListModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -263,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				131A05632757CD42009EE18C /* CustomCollectionView.swift */,
+				13E316C3275CCDEF00A539D8 /* CustomTableView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +404,18 @@
 				1395EB14275C7D2200E3A6B2 /* Roboto-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		13E316C3275CCDEF00A539D8 /* CustomTableView */ = {
+			isa = PBXGroup;
+			children = (
+				13E316C1275CB19900A539D8 /* CustomTableView.swift */,
+				13E316CE275CD20200A539D8 /* CustomTableViewModel.swift */,
+				13E316C8275CCE4100A539D8 /* VerticalListCellType.swift */,
+				13E316CA275CCE5400A539D8 /* VerticalListSectionType.swift */,
+				13E316C4275CCE0100A539D8 /* CustomTableViewSectionViewModel.swift */,
+			);
+			path = CustomTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,10 +572,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E316C2275CB19900A539D8 /* CustomTableView.swift in Sources */,
 				131A05642757CD42009EE18C /* CustomCollectionView.swift in Sources */,
 				138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */,
 				1353AEBA275B2058004D89E1 /* CollectionViewColumnLayout.swift in Sources */,
 				1395EB06275C653E00E3A6B2 /* SettingsViewController.swift in Sources */,
+				13E316CB275CCE5400A539D8 /* VerticalListSectionType.swift in Sources */,
 				1353AEC7275B9E2C004D89E1 /* UIStackView+Init.swift in Sources */,
 				1395EB29275C7EF100E3A6B2 /* UILabel+Init.swift in Sources */,
 				1395EAF8275C61BF00E3A6B2 /* StringConstants.swift in Sources */,
@@ -560,9 +588,13 @@
 				1395EB0D275C7C8300E3A6B2 /* UIFont+Init.swift in Sources */,
 				1353AEC5275B585D004D89E1 /* DashboardViewControllerViewModel.swift in Sources */,
 				13059CA62759B1F100E0AB0A /* CollectionViewBannerLayout.swift in Sources */,
+				13E316CF275CD20200A539D8 /* CustomTableViewModel.swift in Sources */,
+				13E316C5275CCE0100A539D8 /* CustomTableViewSectionViewModel.swift in Sources */,
 				1395EB02275C650400E3A6B2 /* FavoritesViewController.swift in Sources */,
 				1395EAFA275C61C900E3A6B2 /* SizeConstants.swift in Sources */,
+				13E316C0275CAD4B00A539D8 /* MovieListModel.swift in Sources */,
 				138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */,
+				13E316C9275CCE4100A539D8 /* VerticalListCellType.swift in Sources */,
 				131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */,
 				1395EAFE275C648C00E3A6B2 /* BottomTabViewController.swift in Sources */,
 				1353AEC3275B56F9004D89E1 /* MovieDetailsHeaderView.swift in Sources */,
