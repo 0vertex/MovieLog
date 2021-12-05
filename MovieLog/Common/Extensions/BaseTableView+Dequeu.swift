@@ -10,8 +10,8 @@ import UIKit
 
 extension BaseTableView {
     
-    func registerHeaderFooter<AnyViewType: UIView>(_ viewType: AnyViewType.Type) {
-        self.register(AnyViewType.self, forHeaderFooterViewReuseIdentifier: String(describing: viewType))
+    func register<HeaderFooterViewType: UITableViewHeaderFooterView>(_ viewType: HeaderFooterViewType.Type) {
+        self.register(viewType, forHeaderFooterViewReuseIdentifier: String(describing: viewType))
     }
     
     func dequeueHeaderFooter<HeaderFooterType: UITableViewHeaderFooterView>(for type: HeaderFooterType.Type) -> HeaderFooterType? {

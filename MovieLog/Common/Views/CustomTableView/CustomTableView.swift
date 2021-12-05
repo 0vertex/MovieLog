@@ -31,7 +31,7 @@ class CustomTableView: UIView, BaseView {
         self.viewModel?.sectionData.forEach { section in
             // Register headers
             if let safeHeaderType = section.type.viewType {
-                self.tableView.registerHeaderFooter(safeHeaderType)
+                self.tableView.register(safeHeaderType)
             }
             
             // Register cells
@@ -66,6 +66,8 @@ extension CustomTableView: UITableViewDelegate, UITableViewDataSource {
         case .titleSubTitle(let data):
             if let titleSubtitleView = self.tableView.dequeueHeaderFooter(for: TitleSubTitleHeaderFooterView.self) {
                 titleSubtitleView.viewModel = data
+                titleSubtitleView.setupViews()
+                return titleSubtitleView
             } else {
                 assertionFailure()
             }

@@ -15,7 +15,11 @@ struct TitleSubTitleHeaderFooterViewModel: BaseViewModel {
 
 class TitleSubTitleHeaderFooterView: UITableViewHeaderFooterView, BaseView {
     // MARK: - Properties
-    var viewModel: TitleSubTitleHeaderFooterViewModel?
+    var viewModel: TitleSubTitleHeaderFooterViewModel? {
+        didSet {
+            self.setupData()
+        }
+    }
     
     private let titleLabel = UILabel.bold(with: 25)
     private let subTitleLabel = UILabel.bold(with: 16)
