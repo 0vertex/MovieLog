@@ -9,4 +9,7 @@ import Foundation
 
 struct StringConstants {
     static let appTitle = "MovieLog"
+    static let dashboardTitle = "Dashboard"
+    static let favoritiesTitle = "Favorites"
+    static let settingsTitle = "Settings"
 }
