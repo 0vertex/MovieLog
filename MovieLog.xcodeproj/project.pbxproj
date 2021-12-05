@@ -27,6 +27,7 @@
 		1353AEC3275B56F9004D89E1 /* MovieDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353AEC2275B56F9004D89E1 /* MovieDetailsHeaderView.swift */; };
 		1353AEC5275B585D004D89E1 /* DashboardViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353AEC4275B585D004D89E1 /* DashboardViewControllerViewModel.swift */; };
 		1353AEC7275B9E2C004D89E1 /* UIStackView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353AEC6275B9E2C004D89E1 /* UIStackView+Init.swift */; };
+		1353AECA275BA2DB004D89E1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 1353AEC9275BA2DB004D89E1 /* Nuke */; };
 		138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */; };
 		138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09932758747600604BB4 /* UIView+Constrints.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1353AECA275BA2DB004D89E1 /* Nuke in Frameworks */,
 				131A05532757C397009EE18C /* CoreUIKit in Frameworks */,
 				131A05562757C3DD009EE18C /* CoreFoundationKit in Frameworks */,
 			);
@@ -287,6 +289,7 @@
 			packageProductDependencies = (
 				131A05522757C397009EE18C /* CoreUIKit */,
 				131A05552757C3DD009EE18C /* CoreFoundationKit */,
+				1353AEC9275BA2DB004D89E1 /* Nuke */,
 			);
 			productName = MovieLog;
 			productReference = 1300942B2755181D0091ADD2 /* MovieLog.app */;
@@ -363,6 +366,7 @@
 			packageReferences = (
 				131A05512757C397009EE18C /* XCRemoteSwiftPackageReference "CoreUIKit" */,
 				131A05542757C3DD009EE18C /* XCRemoteSwiftPackageReference "CoreFoundationKit" */,
+				1353AEC8275BA2DB004D89E1 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 1300942C2755181D0091ADD2 /* Products */;
 			projectDirPath = "";
@@ -788,6 +792,14 @@
 				minimumVersion = 0.1.0;
 			};
 		};
+		1353AEC8275BA2DB004D89E1 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -800,6 +812,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 131A05542757C3DD009EE18C /* XCRemoteSwiftPackageReference "CoreFoundationKit" */;
 			productName = CoreFoundationKit;
+		};
+		1353AEC9275BA2DB004D89E1 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1353AEC8275BA2DB004D89E1 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

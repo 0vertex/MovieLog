@@ -56,7 +56,8 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == .zero {
+        switch indexPath.row {
+        case 0:
             if let movieOverviewCell = self.movieDetailsVerticalList.dequeue(MovieOverviewCell.self, for: indexPath) {
                 movieOverviewCell.viewModel = MovieOverviewCellViewModel(title: "Overview",
                                                                          description: "Earth is visited by an alien species that threatens humanity’s existence. Events unfold in real time through the eyes of five ordinary people across the globe as they struggle to make sense of the chaos unraveling around them.",
@@ -64,6 +65,15 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
                 movieOverviewCell.setupViews()
                 return movieOverviewCell
             }
+        case 1:
+            if let horizontalListCell = self.movieDetailsVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
+                horizontalListCell.viewModel = HorizontalListTableViewCellViewModel(listHeight: 200,
+                                                                                    layout: CollectionViewColumnLayout(cellSizeType: ViewSize(width: .half, height: .full)))
+                horizontalListCell.setupViews()
+                return horizontalListCell
+            }
+        default:
+            return UITableViewCell()
         }
         
         return UITableViewCell()
