@@ -31,19 +31,7 @@ class DashboardViewController: UIViewController, BaseView {
     
     func setupData() {
         self.viewModel = DashboardViewControllerViewModel()
-        self.dashboardVerticalList.viewModel = CustomTableViewModel(sectionData: [CustomTableSectionDataModel(type: .none,
-                                                                                                              cellData: [.horizontalList(data: .init(listHeight: 100,
-                                                                                                                                                     layout: CollectionViewBannerLayout()))]),
-                                                                                  CustomTableSectionDataModel(type: .titleSubTitle(data: TitleSubTitleHeaderFooterViewModel(title: "Upcoming")),
-                                                                                                              cellData: [.horizontalList(data: .init(listHeight: 200,
-                                                                                                                                                     layout: CollectionViewColumnLayout(cellSizeType: .init(width: .threeFourths, height: .full))))])])
+        self.dashboardVerticalList.viewModel = SampleDataDashboardViewController.customTV
     }
     
 }
-
-//cellData: [.horizontalList(data: HorizontalListTableViewCellViewModel(listHeight: 150,
-//                                                                      layout: CollectionViewBannerLayout())),
-//           .horizontalList(data: HorizontalListTableViewCellViewModel(listHeight: 200,
-//                                                                      layout: CollectionViewColumnLayout(cellSizeType: .init(width: .threeFourths, height: .oneThird)))),
-//           .horizontalList(data: HorizontalListTableViewCellViewModel(listHeight: 250,
-//                                                                      layout: CollectionViewColumnLayout(cellSizeType: .init(width: .half, height: .full))))]

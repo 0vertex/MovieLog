@@ -60,6 +60,7 @@
 		13E316C9275CCE4100A539D8 /* VerticalListCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316C8275CCE4100A539D8 /* VerticalListCellType.swift */; };
 		13E316CB275CCE5400A539D8 /* VerticalListSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316CA275CCE5400A539D8 /* VerticalListSectionType.swift */; };
 		13E316CF275CD20200A539D8 /* CustomTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E316CE275CD20200A539D8 /* CustomTableViewModel.swift */; };
+		13F1B5E6275E4EB50035A689 /* SampleDataDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F1B5E5275E4EB50035A689 /* SampleDataDashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		13E316C8275CCE4100A539D8 /* VerticalListCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListCellType.swift; sourceTree = "<group>"; };
 		13E316CA275CCE5400A539D8 /* VerticalListSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListSectionType.swift; sourceTree = "<group>"; };
 		13E316CE275CD20200A539D8 /* CustomTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewModel.swift; sourceTree = "<group>"; };
+		13F1B5E5275E4EB50035A689 /* SampleDataDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataDashboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		131A054F2757BFBC009EE18C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				13F1B5E4275E4E850035A689 /* SampleData */,
 				1395EB0B275C7AE600E3A6B2 /* Fonts */,
 				130094372755181E0091ADD2 /* Icons.xcassets */,
 				1395EB09275C778F00E3A6B2 /* Colors.xcassets */,
@@ -432,6 +435,14 @@
 			path = CustomTableView;
 			sourceTree = "<group>";
 		};
+		13F1B5E4275E4E850035A689 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				13F1B5E5275E4EB50035A689 /* SampleDataDashboardViewController.swift */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -591,6 +602,7 @@
 				138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */,
 				1353AEBA275B2058004D89E1 /* CollectionViewColumnLayout.swift in Sources */,
 				1395EB06275C653E00E3A6B2 /* SettingsViewController.swift in Sources */,
+				13F1B5E6275E4EB50035A689 /* SampleDataDashboardViewController.swift in Sources */,
 				13E316CB275CCE5400A539D8 /* VerticalListSectionType.swift in Sources */,
 				1353AEC7275B9E2C004D89E1 /* UIStackView+Init.swift in Sources */,
 				1395EB29275C7EF100E3A6B2 /* UILabel+Init.swift in Sources */,

@@ -112,6 +112,5 @@ extension CustomTableView: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-    
 }
 
