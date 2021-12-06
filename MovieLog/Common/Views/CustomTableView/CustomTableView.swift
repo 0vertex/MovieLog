@@ -23,6 +23,11 @@ class CustomTableView: UIView, BaseView {
     
     // MARK: - Setups
     func setupViews() {
+        // Reset top padding
+        if #available(iOS 15.0, *) {
+            self.tableView.sectionHeaderTopPadding = 0
+        }
+        
         self.tableView
             .set(identifier: "CustomTableView.tableView")
             .add(to: self)
