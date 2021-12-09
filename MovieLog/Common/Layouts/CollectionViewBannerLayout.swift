@@ -58,13 +58,13 @@ class CollectionViewBannerLayout: UICollectionViewLayout {
         
         // Check for matching attributes from end
         for attribute in self.cachedCollectionViewLayoutAttributes[..<firstMatchedIndex].reversed() {
-            guard attribute.frame.maxY >= rect.minY else { break }
+            guard attribute.frame.maxX >= rect.minX else { break }
             matchedAttributes.append(attribute)
         }
         
         // Check for matching attributes from start
         for attribute in self.cachedCollectionViewLayoutAttributes[firstMatchedIndex...] {
-            guard attribute.frame.minY <= rect.maxY else { break }
+            guard attribute.frame.minX <= rect.maxX else { break }
             matchedAttributes.append(attribute)
         }
         
@@ -84,7 +84,7 @@ extension CollectionViewBannerLayout {
         if midAttribute.frame.intersects(rect) {
             return midIndex
         } else {
-            if midAttribute.frame.maxY < rect.minY {
+            if midAttribute.frame.maxX < rect.minX {
                 return self.binarySearch(rect, fromIndex: (midIndex + 1), toIndex: endIndex)
             } else {
                 return self.binarySearch(rect, fromIndex: startIndex, toIndex: (midIndex - 1))
