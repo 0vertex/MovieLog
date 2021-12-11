@@ -8,12 +8,7 @@
 import CoreUIKit
 import UIKit
 
-struct HorizontalListTableViewCellViewModel: BaseViewModel {
-    let listHeight: CGFloat
-    let layout: UICollectionViewLayout
-}
-
-class HorizontalListTableViewCell: BaseTableViewCell<HorizontalListTableViewCellViewModel> {
+class HorizontalListTableViewCell: BaseTableViewCell<CustomCollectionViewTableViewCellViewModel> {
     private var horizontalListView: CustomCollectionView?
     
     override func setupViews() {

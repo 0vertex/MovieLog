@@ -95,9 +95,19 @@ extension CustomTableView: UITableViewDelegate, UITableViewDataSource {
         }
         
         switch cellData {
+        case .deckList(data: let data):
+            if let cell = self.tableView.dequeue(DeckListTableViewCell.self, for: indexPath) {
+                cell.viewModel = CustomCollectionViewTableViewCellViewModel(listHeight: data.listHeight,
+                                                                      layout: data.layout)
+                cell.setupViews()
+                
+                return cell
+            } else {
+                assertionFailure()
+            }
         case .horizontalList(let data):
             if let cell = self.tableView.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
-                cell.viewModel = HorizontalListTableViewCellViewModel(listHeight: data.listHeight,
+                cell.viewModel = CustomCollectionViewTableViewCellViewModel(listHeight: data.listHeight,
                                                                       layout: data.layout)
                 cell.setupViews()
                 

@@ -18,7 +18,7 @@ class BaseCollectionViewLayout: UICollectionViewLayout {
     private(set) var cellHeight: CGFloat = .zero
     private(set) var previousScrollXAxisLocation: CGFloat = .zero
     private(set) var numberOfItemsInFirstSection: Int = .zero
-    private(set) var cachedCollectionViewContentSize: CGSize = .zero
+    var cachedCollectionViewContentSize: CGSize = .zero
     var cachedCollectionViewLayoutAttributes = [UICollectionViewLayoutAttributes]()
     
     override func prepare() {
@@ -50,7 +50,7 @@ class BaseCollectionViewLayout: UICollectionViewLayout {
 }
 
 
-extension CollectionViewBannerLayout {
+extension BaseCollectionViewLayout {
     
     func binarySearch(_ rect: CGRect,
                       fromIndex startIndex: Int,

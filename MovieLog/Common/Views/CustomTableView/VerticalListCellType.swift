@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 
 enum VerticalListCellType {
-    case horizontalList(data: HorizontalListTableViewCellViewModel)
+    case deckList(data: CustomCollectionViewTableViewCellViewModel)
+    case horizontalList(data: CustomCollectionViewTableViewCellViewModel)
     
     var cellType: UITableViewCell.Type {
         switch self {
+        case .deckList:
+            return DeckListTableViewCell.self
         case .horizontalList:
             return HorizontalListTableViewCell.self
         }

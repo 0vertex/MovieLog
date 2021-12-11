@@ -10,6 +10,9 @@ import Foundation
 struct SampleDataDashboardViewController {
     
     static let customTV = CustomTableViewModel(sectionData: [CustomTableSectionDataModel(type: .none,
+                                                                                         cellData: [.deckList(data: .init(listHeight: 150,
+                                                                                                                                layout: CollectionViewDeckLayout()))]),
+                                                             CustomTableSectionDataModel(type: .none,
                                                                                          cellData: [.horizontalList(data: .init(listHeight: 120,
                                                                                                                                 layout: CollectionViewBannerLayout()))]),
                                                              CustomTableSectionDataModel(type: .titleSubTitle(data: TitleSubTitleHeaderFooterViewModel(title: "Upcoming")),

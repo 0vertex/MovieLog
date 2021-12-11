@@ -69,7 +69,7 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
             }
         case 1:
             if let horizontalListCell = self.movieDetailsVerticalList.dequeue(HorizontalListTableViewCell.self, for: indexPath) {
-                horizontalListCell.viewModel = HorizontalListTableViewCellViewModel(listHeight: 200,
+                horizontalListCell.viewModel = CustomCollectionViewTableViewCellViewModel(listHeight: 200,
                                                                                     layout: CollectionViewColumnLayout(cellSizeType: ViewSize(width: .half, height: .full)))
                 horizontalListCell.setupViews()
                 return horizontalListCell

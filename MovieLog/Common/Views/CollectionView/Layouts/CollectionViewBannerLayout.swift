@@ -10,8 +10,6 @@ import UIKit
 
 class CollectionViewBannerLayout: BaseCollectionViewLayout {
     
-    
-    
     override func prepare() {
         super.prepare()
         

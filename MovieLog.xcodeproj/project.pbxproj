@@ -15,6 +15,8 @@
 		130094502755181E0091ADD2 /* MovieLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300944F2755181E0091ADD2 /* MovieLogUITests.swift */; };
 		130094522755181E0091ADD2 /* MovieLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130094512755181E0091ADD2 /* MovieLogUITestsLaunchTests.swift */; };
 		13059CA62759B1F100E0AB0A /* CollectionViewBannerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13059CA52759B1F100E0AB0A /* CollectionViewBannerLayout.swift */; };
+		130D6E6127650611003F8F4D /* DeckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130D6E6027650611003F8F4D /* DeckListTableViewCell.swift */; };
+		130D6E63276508E9003F8F4D /* CustomCollectionViewTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130D6E62276508E9003F8F4D /* CustomCollectionViewTableViewCellViewModel.swift */; };
 		131A05532757C397009EE18C /* CoreUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 131A05522757C397009EE18C /* CoreUIKit */; };
 		131A05562757C3DD009EE18C /* CoreFoundationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 131A05552757C3DD009EE18C /* CoreFoundationKit */; };
 		131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05592757C740009EE18C /* DashboardViewController.swift */; };
@@ -95,6 +97,8 @@
 		1300944F2755181E0091ADD2 /* MovieLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITests.swift; sourceTree = "<group>"; };
 		130094512755181E0091ADD2 /* MovieLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		13059CA52759B1F100E0AB0A /* CollectionViewBannerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewBannerLayout.swift; sourceTree = "<group>"; };
+		130D6E6027650611003F8F4D /* DeckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListTableViewCell.swift; sourceTree = "<group>"; };
+		130D6E62276508E9003F8F4D /* CustomCollectionViewTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		131A05592757C740009EE18C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		131A05632757CD42009EE18C /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
 		131A05652757DAE6009EE18C /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -343,6 +347,8 @@
 			children = (
 				131A05652757DAE6009EE18C /* CardCell.swift */,
 				138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */,
+				130D6E62276508E9003F8F4D /* CustomCollectionViewTableViewCellViewModel.swift */,
+				130D6E6027650611003F8F4D /* DeckListTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 				131A05662757DAE6009EE18C /* CardCell.swift in Sources */,
 				1395EB08275C738400E3A6B2 /* ImageConstants.swift in Sources */,
 				130094332755181D0091ADD2 /* RootViewController.swift in Sources */,
+				130D6E6127650611003F8F4D /* DeckListTableViewCell.swift in Sources */,
 				1353AEBE275B3AA6004D89E1 /* MovieDetailsViewController.swift in Sources */,
 				1395EB0D275C7C8300E3A6B2 /* UIFont+Init.swift in Sources */,
 				1353AEC5275B585D004D89E1 /* DashboardViewControllerViewModel.swift in Sources */,
@@ -626,6 +633,7 @@
 				1395EAFA275C61C900E3A6B2 /* SizeConstants.swift in Sources */,
 				13E316C0275CAD4B00A539D8 /* MovieListModel.swift in Sources */,
 				138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */,
+				130D6E63276508E9003F8F4D /* CustomCollectionViewTableViewCellViewModel.swift in Sources */,
 				13E316C9275CCE4100A539D8 /* VerticalListCellType.swift in Sources */,
 				131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */,
 				137D591B2764C4D000933B29 /* CollectionViewDeckLayout.swift in Sources */,
