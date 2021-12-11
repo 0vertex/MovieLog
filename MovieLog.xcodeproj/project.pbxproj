@@ -273,7 +273,6 @@
 				1395EAFC275C640F00E3A6B2 /* BottomTab */,
 				1395EAF6275C61A900E3A6B2 /* Constants */,
 				138E09922758745B00604BB4 /* Extensions */,
-				13059CA42759B19500E0AB0A /* Layouts */,
 				131A05622757CD26009EE18C /* Views */,
 			);
 			path = Common;
@@ -318,6 +317,7 @@
 		1360D340275CE70F00E77A8C /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				13059CA42759B19500E0AB0A /* Layouts */,
 				131A05632757CD42009EE18C /* CustomCollectionView.swift */,
 			);
 			path = CollectionView;
