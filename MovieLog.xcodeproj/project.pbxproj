@@ -20,7 +20,7 @@
 		131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05592757C740009EE18C /* DashboardViewController.swift */; };
 		131A05642757CD42009EE18C /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05632757CD42009EE18C /* CustomCollectionView.swift */; };
 		131A05662757DAE6009EE18C /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131A05652757DAE6009EE18C /* CardCell.swift */; };
-		1353AEB8275B1F09004D89E1 /* BaseCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353AEB7275B1F09004D89E1 /* BaseCollectionViewLayout.swift */; };
+		1353AEB8275B1F09004D89E1 /* BaseCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353AEB7275B1F09004D89E1 /* BaseCollectionViewFlowLayout.swift */; };
 		1353AEBA275B2058004D89E1 /* CollectionViewColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353AEB9275B2058004D89E1 /* CollectionViewColumnLayout.swift */; };
 		1353AEBE275B3AA6004D89E1 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353AEBD275B3AA6004D89E1 /* MovieDetailsViewController.swift */; };
 		1353AEC1275B5683004D89E1 /* MovieOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353AEC0275B5683004D89E1 /* MovieOverviewCell.swift */; };
@@ -30,6 +30,8 @@
 		1353AECA275BA2DB004D89E1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 1353AEC9275BA2DB004D89E1 /* Nuke */; };
 		1360D342275CE72400E77A8C /* TitleSubTitleHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1360D341275CE72400E77A8C /* TitleSubTitleHeaderFooterView.swift */; };
 		1360D344275CEA5100E77A8C /* BaseTableView+Dequeu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1360D343275CEA5100E77A8C /* BaseTableView+Dequeu.swift */; };
+		137D591B2764C4D000933B29 /* CollectionViewDeckLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D591A2764C4D000933B29 /* CollectionViewDeckLayout.swift */; };
+		137D591D2764C54000933B29 /* BaseCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137D591C2764C54000933B29 /* BaseCollectionViewLayout.swift */; };
 		138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */; };
 		138E09942758747600604BB4 /* UIView+Constrints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E09932758747600604BB4 /* UIView+Constrints.swift */; };
 		1395EAF8275C61BF00E3A6B2 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1395EAF7275C61BF00E3A6B2 /* StringConstants.swift */; };
@@ -96,7 +98,7 @@
 		131A05592757C740009EE18C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		131A05632757CD42009EE18C /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
 		131A05652757DAE6009EE18C /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		1353AEB7275B1F09004D89E1 /* BaseCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewLayout.swift; sourceTree = "<group>"; };
+		1353AEB7275B1F09004D89E1 /* BaseCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1353AEB9275B2058004D89E1 /* CollectionViewColumnLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewColumnLayout.swift; sourceTree = "<group>"; };
 		1353AEBD275B3AA6004D89E1 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		1353AEC0275B5683004D89E1 /* MovieOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieOverviewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +107,8 @@
 		1353AEC6275B9E2C004D89E1 /* UIStackView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Init.swift"; sourceTree = "<group>"; };
 		1360D341275CE72400E77A8C /* TitleSubTitleHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubTitleHeaderFooterView.swift; sourceTree = "<group>"; };
 		1360D343275CEA5100E77A8C /* BaseTableView+Dequeu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTableView+Dequeu.swift"; sourceTree = "<group>"; };
+		137D591A2764C4D000933B29 /* CollectionViewDeckLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDeckLayout.swift; sourceTree = "<group>"; };
+		137D591C2764C54000933B29 /* BaseCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewLayout.swift; sourceTree = "<group>"; };
 		138E09902758708E00604BB4 /* HorizontalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListTableViewCell.swift; sourceTree = "<group>"; };
 		138E09932758747600604BB4 /* UIView+Constrints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrints.swift"; sourceTree = "<group>"; };
 		1395EAF7275C61BF00E3A6B2 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -218,9 +222,11 @@
 		13059CA42759B19500E0AB0A /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				1353AEB7275B1F09004D89E1 /* BaseCollectionViewLayout.swift */,
+				137D591C2764C54000933B29 /* BaseCollectionViewLayout.swift */,
+				1353AEB7275B1F09004D89E1 /* BaseCollectionViewFlowLayout.swift */,
 				1353AEB9275B2058004D89E1 /* CollectionViewColumnLayout.swift */,
 				13059CA52759B1F100E0AB0A /* CollectionViewBannerLayout.swift */,
+				137D591A2764C4D000933B29 /* CollectionViewDeckLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -622,11 +628,13 @@
 				138E09912758708E00604BB4 /* HorizontalListTableViewCell.swift in Sources */,
 				13E316C9275CCE4100A539D8 /* VerticalListCellType.swift in Sources */,
 				131A055A2757C740009EE18C /* DashboardViewController.swift in Sources */,
+				137D591B2764C4D000933B29 /* CollectionViewDeckLayout.swift in Sources */,
 				1395EAFE275C648C00E3A6B2 /* BottomTabViewController.swift in Sources */,
 				1353AEC3275B56F9004D89E1 /* MovieDetailsHeaderView.swift in Sources */,
 				1353AEC1275B5683004D89E1 /* MovieOverviewCell.swift in Sources */,
 				1300942F2755181D0091ADD2 /* AppDelegate.swift in Sources */,
-				1353AEB8275B1F09004D89E1 /* BaseCollectionViewLayout.swift in Sources */,
+				137D591D2764C54000933B29 /* BaseCollectionViewLayout.swift in Sources */,
+				1353AEB8275B1F09004D89E1 /* BaseCollectionViewFlowLayout.swift in Sources */,
 				1360D344275CEA5100E77A8C /* BaseTableView+Dequeu.swift in Sources */,
 				1360D342275CE72400E77A8C /* TitleSubTitleHeaderFooterView.swift in Sources */,
 			);
