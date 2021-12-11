@@ -22,7 +22,9 @@ class CollectionViewBannerLayout: UICollectionViewLayout {
         super.prepare()
         
         guard let collectionView = self.collectionView else { return }
-
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        
         self.cellWidth = collectionView.bounds.width - horizontalMargin
         self.cellHeight = collectionView.bounds.height
         self.numberOfItemsInFirstSection = collectionView.numberOfItems(inSection: 0)
