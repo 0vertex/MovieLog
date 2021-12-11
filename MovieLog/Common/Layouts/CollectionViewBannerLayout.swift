@@ -13,7 +13,8 @@ class CollectionViewBannerLayout: UICollectionViewLayout {
     private var cellWidth: CGFloat = .zero
     private var cellHeight: CGFloat = .zero
     private let horizontalMargin: CGFloat = 30
-    private var numberOfItemsInFirstSection = 0
+    private var previousScrollXAxisLocation: CGFloat = .zero
+    private var numberOfItemsInFirstSection: Int = .zero
     private var cachedCollectionViewContentSize: CGSize = .zero
     private var cachedCollectionViewLayoutAttributes = [UICollectionViewLayoutAttributes]()
     
@@ -71,6 +72,17 @@ class CollectionViewBannerLayout: UICollectionViewLayout {
         return matchedAttributes
     }
     
+    // Pagination
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        guard let safeCollectionView = self.collectionView else { return proposedContentOffset }
+        
+        // For horizontal scroll
+        let nextCellIndex = round(safeCollectionView.contentOffset.x / self.cellWidth)
+        var nextCellXAxisLocation = (self.cellWidth * nextCellIndex)
+        // Error: Cell's have margin, to have the cell at the center, reude half of the margin
+        nextCellXAxisLocation -= (self.horizontalMargin / 2)
+        return CGPoint(x: nextCellXAxisLocation, y: 0)
+    }
 }
 
 extension CollectionViewBannerLayout {
