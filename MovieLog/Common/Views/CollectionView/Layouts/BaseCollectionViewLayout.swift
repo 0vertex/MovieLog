@@ -14,12 +14,11 @@ enum LayoutAxis {
 
 class BaseCollectionViewLayout: UICollectionViewLayout {
     let horizontalMargin: CGFloat = 30
-    private(set) var cellWidth: CGFloat = .zero
-    private(set) var cellHeight: CGFloat = .zero
-    private(set) var previousScrollXAxisLocation: CGFloat = .zero
-    private(set) var numberOfItemsInFirstSection: Int = .zero
+    var cellWidth: CGFloat = .zero
+    var cellHeight: CGFloat = .zero
     var cachedCollectionViewContentSize: CGSize = .zero
     var cachedCollectionViewLayoutAttributes = [UICollectionViewLayoutAttributes]()
+    private(set) var numberOfItemsInFirstSection: Int = .zero
     
     override func prepare() {
         super.prepare()

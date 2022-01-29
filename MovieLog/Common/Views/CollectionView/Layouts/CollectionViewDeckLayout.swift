@@ -7,19 +7,21 @@
 
 import UIKit
 
+// Partially working
 class CollectionViewDeckLayout: BaseCollectionViewLayout {
     
     override func prepare() {
         super.prepare()
         
-        self.cachedCollectionViewContentSize = CGSize(width: self.cellWidth, height: (self.cellHeight * CGFloat(self.numberOfItemsInFirstSection)))
+        guard let safeCollectionView = self.collectionView else { return }
+        
+        self.cellWidth = safeCollectionView.bounds.width
+        self.cachedCollectionViewContentSize =  CGSize(width: self.cellWidth,
+                                                       height: self.cellHeight * CGFloat(self.numberOfItemsInFirstSection))
         
         // Generate attributes for cells
         for currentIndex in (0..<self.numberOfItemsInFirstSection) {
-            let attr = UICollectionViewLayoutAttributes(forCellWith: IndexPath(row: currentIndex, section: 0))
-            attr.frame = CGRect(x: 0, y: CGFloat(currentIndex),
-                                width: self.cellWidth, height: self.cellHeight)
-            self.cachedCollectionViewLayoutAttributes.append(attr)
+            self.cachedCollectionViewLayoutAttributes.append(self.getAttributes(for: IndexPath(row: currentIndex, section: 0)))
         }
     }
     
@@ -45,5 +47,47 @@ class CollectionViewDeckLayout: BaseCollectionViewLayout {
         
         return matchedAttributes
     }
+    
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        return self.getAttributes(for: indexPath)
+    }
+    
+    override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        return self.getAttributes(for: itemIndexPath)
+    }
+    
+    override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let attr = self.getAttributes(for: itemIndexPath)
+        attr.zIndex += 1
+        return attr
+    }
+    
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
+    }
+}
+
+extension CollectionViewDeckLayout {
+    
+    func getAttributes(for indexPath: IndexPath) -> UICollectionViewLayoutAttributes {
+        let attr = UICollectionViewLayoutAttributes(forCellWith: IndexPath(row: indexPath.row, section: indexPath.section))
+        let deltaIndex = self.numberOfItemsInFirstSection - indexPath.row
+        
+        attr.zIndex = deltaIndex
+        attr.frame = CGRect(x: 0, y: CGFloat(indexPath.row * 5),
+                            width: self.cellWidth,
+                            height: self.cellHeight)
+        
+        if indexPath.row < 4 {
+            attr.transform = CGAffineTransform.identity
+                .scaledBy(x: CGFloat(indexPath.row) * 0.25, y: CGFloat(indexPath.row) * 0.25)
+        }
+        
+        return attr
+    }
+    
+}
+
+class DeckLayoutAttributes: UICollectionViewLayoutAttributes {
     
 }
