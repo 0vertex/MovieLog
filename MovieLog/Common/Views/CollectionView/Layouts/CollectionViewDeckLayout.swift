@@ -10,6 +10,8 @@ import UIKit
 // Partially working
 class CollectionViewDeckLayout: BaseCollectionViewLayout {
     
+    private var previousScrollYPosition = CGFloat.zero
+    
     override func prepare() {
         super.prepare()
         
@@ -20,9 +22,12 @@ class CollectionViewDeckLayout: BaseCollectionViewLayout {
                                                        height: self.cellHeight * CGFloat(self.numberOfItemsInFirstSection))
         
         // Generate attributes for cells
+        self.cachedCollectionViewLayoutAttributes = []
         for currentIndex in (0..<self.numberOfItemsInFirstSection) {
             self.cachedCollectionViewLayoutAttributes.append(self.getAttributes(for: IndexPath(row: currentIndex, section: 0)))
         }
+
+        self.previousScrollYPosition = safeCollectionView.contentOffset.y
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -47,24 +52,11 @@ class CollectionViewDeckLayout: BaseCollectionViewLayout {
         
         return matchedAttributes
     }
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return self.getAttributes(for: indexPath)
-    }
-    
-    override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return self.getAttributes(for: itemIndexPath)
-    }
-    
-    override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        let attr = self.getAttributes(for: itemIndexPath)
-        attr.zIndex += 1
-        return attr
-    }
-    
+
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
+    
 }
 
 extension CollectionViewDeckLayout {
@@ -73,21 +65,40 @@ extension CollectionViewDeckLayout {
         let attr = UICollectionViewLayoutAttributes(forCellWith: IndexPath(row: indexPath.row, section: indexPath.section))
         let deltaIndex = self.numberOfItemsInFirstSection - indexPath.row
         
-        attr.zIndex = deltaIndex
-        attr.frame = CGRect(x: 0, y: CGFloat(indexPath.row * 5),
-                            width: self.cellWidth,
-                            height: self.cellHeight)
-        
-        if indexPath.row < 4 {
-            attr.transform = CGAffineTransform.identity
-                .scaledBy(x: CGFloat(indexPath.row) * 0.25, y: CGFloat(indexPath.row) * 0.25)
+        if let safeYScrollPosition = self.collectionView?.contentOffset.y {
+            var yPosition = CGFloat.zero
+            let nextVisibleIndex = self.getNextVisibleIndex(using: safeYScrollPosition)
+            let currentRowIndex = indexPath.row
+            
+            if (safeYScrollPosition == .zero) || (nextVisibleIndex == .zero) || (currentRowIndex > nextVisibleIndex) {
+                yPosition = CGFloat(currentRowIndex * 5)
+            } else {
+                if currentRowIndex < nextVisibleIndex {
+                    yPosition = (safeYScrollPosition - (CGFloat(currentRowIndex) * self.cellHeight))
+                } else {
+                    yPosition = safeYScrollPosition
+                }
+            }
+            
+            attr.zIndex = Int(yPosition) / deltaIndex
+            attr.frame = CGRect(x: 0, y: yPosition,
+                                width: self.cellWidth,
+                                height: self.cellHeight)
         }
         
         return attr
     }
     
-}
-
-class DeckLayoutAttributes: UICollectionViewLayoutAttributes {
+    func getNextVisibleIndex(using yPosition: CGFloat) -> Int {
+        if yPosition <= .zero { return .zero }
+        
+        let index = Int(ceil(yPosition / self.cellHeight))
+        // Scrolling up
+        if self.previousScrollYPosition < yPosition {
+            return index
+        } else { // Scrolling down
+            return (index > 0) ? (index - 1) : 0
+        }
+    }
     
 }
